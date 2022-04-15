@@ -7,6 +7,26 @@
     <title>homepage</title>
 </head>
 <body>
-    <h2>This is my home page</h2>
+    <div class="container text-center">
+        <h1>Hi, this is random password generator</h1>
+        <form action="password/">
+            <select name="passwordlength" id="passwordLength">
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8" selected>8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>  Length of the password
+            <br>
+            <input type="checkbox" name="uppercase"> Uppercase <br>
+            <input type="checkbox" name="number"> Numbers <br>
+            <input type="checkbox" name="symbol"> Symbols <br>
+            <input type="submit" name="submit" value="Generate password"> <br>
+        </form>
+    </div>
 </body>
 </html>
