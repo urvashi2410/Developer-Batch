@@ -5,4 +5,6 @@
 # from django.http import HttpResponse
 # py manage.py makemigrations 
 # py manage.py migrate 
-# from . import views 
+# from . import views
+# py manage.py createsuperuser 
+ 

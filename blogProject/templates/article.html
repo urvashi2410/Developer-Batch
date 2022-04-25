@@ -8,5 +8,12 @@
 </head>
 <body>
     <h1>Article page</h1>
+    <div class="container">
+        {% for i in articles %}
+            <a href="{{i.slug}}"><h2>{{i.title}}</h2></a>
+            <p>{{i.getBodySlice}}</p>
+            <p>{{i.date}}</p>
+        {% endfor %}
+    </div>
 </body>
 </html>
