@@ -8,3 +8,4 @@
 # from . import views
 # py manage.py createsuperuser 
 # from django.contrib.auth.forms import UserCreationForm
+# python manage.py changepassword <user_name>
