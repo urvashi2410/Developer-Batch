@@ -1,4 +1,5 @@
 from django.db import models
+from matplotlib.image import thumbnail
 
 # Create your models here.
 class Article(models.Model):
@@ -6,6 +7,7 @@ class Article(models.Model):
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField()
+    thumbnail = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.title 
