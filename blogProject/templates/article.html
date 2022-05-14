@@ -12,6 +12,7 @@
         {% for i in articles %}
             <a href="{{i.slug}}"><h2>{{i.title}}</h2></a>
             <p>{{i.getBodySlice}}</p>
+            <p>{{i.user}}</p>
             <p>{{i.date}}</p>
         {% endfor %}
     </div>

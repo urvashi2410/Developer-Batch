@@ -22,6 +22,10 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
+            url = None
+            url = request.POST.get('next')
+            if url is not None:
+                return redirect(url)
             return redirect('article_page')
     else: 
         form = AuthenticationForm()

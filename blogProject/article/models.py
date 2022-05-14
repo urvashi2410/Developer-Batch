@@ -1,5 +1,5 @@
 from django.db import models
-from matplotlib.image import thumbnail
+from django.contrib.auth.models import User 
 
 # Create your models here.
 class Article(models.Model):
@@ -8,6 +8,7 @@ class Article(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField()
     thumbnail = models.ImageField(null=True, blank=True)
+    user = models.ForeignKey(User, default=None, on_delete = models.CASCADE)
 
     def __str__(self):
         return self.title 
