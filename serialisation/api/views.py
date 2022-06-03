@@ -1,22 +1,20 @@
-from django.shortcuts import render
-from .models import Student
+from .models import Student 
 from .serialiser import StudentSerialiser
 from rest_framework.renderers import JSONRenderer
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse
 
-# Create your views here.
+# fetching data of all the students 
 def allStudent(request):
     s = Student.objects.all()
-    serialiser = StudentSerialiser(s, many=True)
-    json_data = JSONRenderer().render(serialiser.data)
-    return HttpResponse(json_data, content_type = 'application/json')
+    serialsedData = StudentSerialiser(s, many=True)
+    jsonData = JSONRenderer().render(serialsedData.data)
+    return HttpResponse(jsonData, content_type = 'application/json')
 
+# fetching data of a particular student with given slug 
 def student(request, slug):
-    # it will show particular student data whose slug is given
-    s = Student.objects.get(id=slug)
-    # it converted the complex model into python
-    serialiser = StudentSerialiser(s)
-    # it converted the python data into json data 
-    json_data = JSONRenderer().render(serialiser.data)
-
-    return HttpResponse(json_data, content_type = 'application/json')
+    s = Student.objects.get(id = slug) 
+    # python me convert ho gya 
+    serialisedData = StudentSerialiser(s)
+    # python to json convert 
+    jsonData = JSONRenderer().render(serialisedData.data)
+    return HttpResponse(jsonData, content_type = 'application/json')
