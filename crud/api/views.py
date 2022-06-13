@@ -6,6 +6,9 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework import status
+from rest_framework import mixins
+from rest_framework import generics
+
 # Create your views here.
 
 '''
@@ -52,6 +55,8 @@ def delete_view(request, pk):
     return Response('Item deleted')
 '''
 
+# to read 
+'''
 class TodoClassBasedView(APIView):
     def get(self, request, pk=None, format=None):
         if pk is not None:
@@ -90,3 +95,46 @@ class TodoClassBasedView(APIView):
             return Response('No data found', status=status.HTTP_404_NOT_FOUND)
         task.delete()
         return Response('Deleted!', status=status.HTTP_200_OK)
+'''
+
+'''
+class TodoMixinList(
+    mixins.ListModelMixin,
+    mixins.CreateModelMixin,
+    generics.GenericAPIView
+    ):
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerialiser
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+    
+class TodoMixinDetail(
+    mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.DestroyModelMixin,
+    generics.GenericAPIView
+    ):
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerialiser
+
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
+
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)
+'''
+
+class TodoGenericList(generics.ListCreateAPIView):
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerialiser
+
+class TodoGenericDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Todo.objects.all()
+    serializer_class = TodoSerialiser
