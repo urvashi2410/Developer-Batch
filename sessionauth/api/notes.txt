@@ -1,0 +1,6 @@
+session authentication :
+permissions : 
+1. isAuthenticated = normal login logout wali authentication
+2. allowany = har koi access kr paa rha tha but login logout likha aa rha tha 
+3. DjangoModelPermissions = admin panel se jo bhi permissions denge jis bhi user ko vo kaam krengi
+4. DjangoModelPermissionsOrAnonReadOnly = admin panel se jo bhi permissions denge jis bhi user ko vo kaam krengi but uske alawa koi bahr ka user h to usko read krni ki permission h bs 
