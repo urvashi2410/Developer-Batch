@@ -1,0 +1,5 @@
+1. admin panel se manually tokens me add token 
+2. py manage.py drf_create_token riya = to generate token for a particular user 
+http POST http://127.0.0.1:8000/api/tokenauth/ username="pranjal" password="iamaadmin" = to login 
+http GET http://127.0.0.1:8000/api/ "Authorization: Token 69fd4a778fdbc6ae9724b58f3828a85ee82932b1" = to read 
+http GET http://127.0.0.1:8000/api/3 "Authorization: Token 69fd4a778fdbc6ae9724b58f3828a85ee82932b1" = for particular primary key wala user 
