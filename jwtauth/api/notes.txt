@@ -1,0 +1,5 @@
+pip install djangorestframework-simplejwt
+http GET http://127.0.0.1:8000/api/ "Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU2ODYzMzEzLCJpYXQiOjE2NTY4NjMwMTMsImp0aSI6ImVhNGQyODFkMjA3MzRlOTlhNzViNmJhMDA4ZjVjODM5IiwidXNlcl9pZCI6Mn0.h2bLL4pClfsyy4C32mWf73MRbhF0twxnEYfBUAWnwlM"
+http POST http://127.0.0.1:8000/api/token/ username="pranjal" password="iamaadmin"
+http GET http://127.0.0.1:8000/api/3 "Authorization: Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU2ODYzMzEzLCJpYXQiOjE2NTY4NjMwMTMsImp0aSI6ImVhNGQyODFkMjA3MzRlOTlhNzViNmJhMDA4ZjVjODM5IiwidXNlcl9pZCI6Mn0.h2bLL4pClfsyy4C32mWf73MRbhF0twxnEYfBUAWnwlM"
+http -f POST http://127.0.0.1:8000/api/ isDone=true heading=pdhnahai/ "Authorization: Token "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU2ODYzMzEzLCJpYXQiOjE2NTY4NjMwMTMsImp0aSI6ImVhNGQyODFkMjA3MzRlOTlhNzViNmJhMDA4ZjVjODM5IiwidXNlcl9pZCI6Mn0.h2bLL4pClfsyy4C32mWf73MRbhF0twxnEYfBUAWnwlM"
