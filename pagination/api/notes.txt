@@ -1,0 +1,3 @@
+limit = page size = ek page pe kitne todos aaenge 
+offset = ek particular primary key k baad wale todos dekhne k liye (eg: offset=5 = 6th se dikhayega)
+http://127.0.0.1:8000/api/?limit=5&offset=8 
